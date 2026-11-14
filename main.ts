@@ -18,4 +18,4 @@ copyFileSync(new URL('./entry.png', import.meta.url), dest);
 // silently shipping a truncated or stale copy.
 const src = readFileSync(new URL('./entry.png', import.meta.url));
 const out = readFileSync(dest);
-if (!src.equals(out)) throw new Error('copied entry.png does not match the bundled entry.png');
+if (!src.equals(out)) throw new Error(`copied entry.png (${out.length} bytes) does not match the bundled entry.png (${src.length} bytes)`);
